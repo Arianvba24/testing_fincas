@@ -3,7 +3,7 @@ import streamlit as st
 import re
 
 def cosas():
-    browser = mechanicalsoup.Browser()
+    browser = mechanicalsoup.StatefulBrowser()
 
     browser.add_headers({
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
@@ -13,7 +13,7 @@ def cosas():
         "Referrer-Policy": "origin-when-cross-origin"
     })
 
-    browser.get("https://www.bing.com")
+    browser.open("https://www.bing.com")
 
     browser.select_form('form[action="/search"]')
 
