@@ -23,8 +23,8 @@ def cosas():
 
     if emails:
         for email in emails:
-            data_json[str(indice)] = email
-            print(email,value)
+       
+            print(email)
             return email
 
 
