@@ -3,9 +3,17 @@ import streamlit as st
 import re
 
 def cosas():
-    browser = mechanicalsoup.StatefulBrowser()
+    browser = mechanicalsoup.Browser()
 
-    browser.open("https://www.bing.com")
+    browser.add_headers({
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Language": "es-ES,es;q=0.9",
+        "Connection": "keep-alive",
+        "Referrer-Policy": "origin-when-cross-origin"
+    })
+
+    browser.get("https://www.bing.com")
 
     browser.select_form('form[action="/search"]')
 
