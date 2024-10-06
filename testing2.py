@@ -1,6 +1,6 @@
 import mechanicalsoup
 import streamlit as st
-
+import re
 
 def cosas():
     browser = mechanicalsoup.StatefulBrowser()
